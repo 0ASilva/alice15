@@ -1,6 +1,6 @@
 /* Cores tiradas do convite oficial (convite.jpg) */
 :root {
-  --fundo: #050911;       /* azul-noite do fundo */
+  --fundo: #0c1b40;       /* azul-marinho da parte de baixo do convite */
   --ouro: #a18758;        /* glitter dourado */
   --ouro-claro: #c8ad78;
   --champanhe: #f4e8d0;   /* o "15" */
@@ -201,6 +201,15 @@ input[type="tel"]:focus {
   body { padding-top: 32px; }
   .convite { border-radius: var(--raio); }
   .contato, .rsvp { margin-left: 0; margin-right: 0; }
+}
+
+/* Computador: brilho e estrelas do convite na página inteira.
+   A imagem só é baixada em telas largas; no celular o fundo continua liso. */
+@media (min-width: 768px) {
+  body {
+    background: var(--fundo) url("fundo-estrelas.jpg") center top / auto 100vh repeat-x fixed;
+  }
+  .rsvp { background: rgba(12, 27, 64, 0.88); }
 }
 
 @media (prefers-reduced-motion: reduce) {
