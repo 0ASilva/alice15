@@ -1,0 +1,208 @@
+/* Cores tiradas do convite oficial (convite.jpg) */
+:root {
+  --fundo: #050911;       /* azul-noite do fundo */
+  --ouro: #a18758;        /* glitter dourado */
+  --ouro-claro: #c8ad78;
+  --champanhe: #f4e8d0;   /* o "15" */
+  --taupe: #a59c88;       /* "TRAJE ESPORTE FINO" */
+  --texto: #f4f1ea;
+  --alerta: #f2b8a8;
+  --raio: 14px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--texto);
+  background: var(--fundo);
+  display: flex;
+  justify-content: center;
+}
+
+[hidden] { display: none !important; }
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  padding: 0 0 40px;
+  text-align: center;
+}
+
+/* ===== Convite ===== */
+.convite {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.contato {
+  margin: 18px 16px 22px;
+  font-size: 0.95rem;
+  color: var(--taupe);
+}
+
+.contato a { color: var(--ouro-claro); }
+
+/* ===== Formulário ===== */
+.rsvp {
+  margin: 0 16px;
+  padding: 26px 20px 22px;
+  border-radius: var(--raio);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(161, 135, 88, 0.35);
+  text-align: left;
+}
+
+.rsvp h2 {
+  margin: 0 0 20px;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--taupe);
+}
+
+.campo {
+  display: block;
+  margin: 0 0 16px;
+}
+
+.campo > span,
+.pessoas legend {
+  display: block;
+  margin-bottom: 6px;
+  padding: 0;
+  font-size: 0.9rem;
+  color: var(--taupe);
+}
+
+.pessoas { border: 0; padding: 0; }
+
+#lista-pessoas { display: grid; gap: 8px; }
+
+input[type="text"],
+input[type="tel"] {
+  width: 100%;
+  font: inherit;
+  font-size: 16px; /* evita zoom automático no iPhone */
+  color: var(--texto);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(244, 232, 208, 0.22);
+  border-radius: 10px;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]::placeholder,
+input[type="tel"]::placeholder { color: #75705f; }
+
+input[type="text"]:focus,
+input[type="tel"]:focus {
+  border-color: var(--ouro-claro);
+  box-shadow: 0 0 0 3px rgba(200, 173, 120, 0.22);
+}
+
+.adicionar {
+  margin-top: 10px;
+  width: 100%;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--ouro-claro);
+  background: transparent;
+  border: 1px dashed rgba(200, 173, 120, 0.55);
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.adicionar:disabled { opacity: 0.5; cursor: default; }
+
+.erro {
+  min-height: 1.2em;
+  margin: 4px 0 10px;
+  font-size: 0.92rem;
+  color: var(--alerta);
+  text-align: center;
+}
+
+.botao {
+  display: block;
+  width: 100%;
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--fundo);
+  background: linear-gradient(180deg, var(--champanhe), #d8c39a);
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 18px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(200, 173, 120, 0.22);
+  transition: transform 0.15s;
+}
+
+.botao:hover { transform: translateY(-1px); }
+.botao:active { transform: translateY(0); }
+.botao:focus-visible,
+.adicionar:focus-visible { outline: 3px solid var(--ouro-claro); outline-offset: 3px; }
+
+.botao.secundario {
+  color: var(--texto);
+  background: transparent;
+  border: 1px solid rgba(200, 173, 120, 0.55);
+  box-shadow: none;
+}
+
+/* ===== Agradecimento ===== */
+#obrigado { padding: 56px 16px 40px; }
+
+.script {
+  font-family: "Allura", "Brush Script MT", cursive;
+  font-weight: 400;
+  color: var(--champanhe);
+}
+
+.grande {
+  margin: 0 0 12px;
+  font-size: 4.5rem;
+}
+
+.mensagem {
+  margin: 0 0 24px;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.detalhes {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.traje {
+  margin: 0 0 28px;
+  font-size: 0.85rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--taupe);
+}
+
+/* ===== Telas maiores ===== */
+@media (min-width: 520px) {
+  body { padding-top: 32px; }
+  .convite { border-radius: var(--raio); }
+  .contato, .rsvp { margin-left: 0; margin-right: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

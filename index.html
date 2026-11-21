@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alice faz 15 · Confirme sua presença</title>
+  <meta name="description" content="Confirme sua presença na festa de 15 anos da Alice.">
+  <meta name="theme-color" content="#050911">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== Página principal ===== -->
+  <main class="card" id="pagina">
+    <!-- O convite oficial, exportado do SVG (Convite de aniversário Alice.svg) -->
+    <img class="convite" src="convite.jpg" width="794" height="1118"
+      alt="Alice faz 15. Venha comemorar comigo! Dezembro, sexta, 11, 20h30. Traje esporte fino. Rua Monte Cristo, s/n, Pau Grande.">
+
+    <p class="contato">
+      Dúvidas? <a href="https://w.app/spqc91" target="_blank" rel="noopener">Fale pelo WhatsApp</a>
+    </p>
+
+    <section class="rsvp" id="rsvp" aria-labelledby="rsvp-titulo">
+      <h2 id="rsvp-titulo">Confirme sua presença</h2>
+
+      <form id="form-rsvp" novalidate>
+        <fieldset class="campo pessoas">
+          <legend>Quem vai? <small>(nome e sobrenome de cada pessoa)</small></legend>
+          <div id="lista-pessoas">
+            <input type="text" name="pessoa" maxlength="80" autocomplete="name" placeholder="Ex.: Ana Silva" aria-label="Pessoa 1">
+          </div>
+          <button type="button" class="adicionar" id="adicionar-pessoa">+ Adicionar pessoa da família</button>
+        </fieldset>
+
+        <label class="campo">
+          <span>WhatsApp para receber a confirmação <small>(com DDD)</small></span>
+          <input type="tel" name="whatsapp" inputmode="tel" autocomplete="tel" placeholder="(21) 99999-9999" required>
+        </label>
+
+        <p class="erro" id="erro" role="alert"></p>
+        <button type="submit" class="botao">Enviar resposta</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- ===== Confirmação enviada ===== -->
+  <main class="card" id="obrigado" hidden aria-live="polite">
+    <h2 class="script grande">Obrigado!</h2>
+    <p id="obrigado-texto" class="mensagem"></p>
+    <p class="detalhes">Sexta, 11 de dezembro · 20h30<br>Rua Monte Cristo, s/n · Pau Grande</p>
+    <p class="traje">Traje esporte fino</p>
+    <button type="button" class="botao secundario" id="refazer">Enviar outra resposta</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
